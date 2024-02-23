@@ -49,7 +49,7 @@ namespace Linq2Acad
     /// <summary>
     /// Converts each Block into an EntityContainer that allows querying for entities.
     /// </summary>
-    /// <returns>The elements of the Block table as EntitiyContainers.</returns>
+    /// <returns>The elements of the Block table as EntityContainers.</returns>
     public IEnumerable<EntityContainer> AsEntityContainers()
     {
       Require.NotDisposed(database.IsDisposed, nameof(AcadDatabase));
