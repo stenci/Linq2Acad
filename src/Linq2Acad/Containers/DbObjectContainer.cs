@@ -119,7 +119,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Adds the given object to the underlaying transaction. This is only needed for objects that are not stored in containers (e.g. AttributeReference).
+    /// Adds the given object to the underlying transaction. This is only needed for objects that are not stored in containers (e.g. AttributeReference).
     /// </summary>
     /// <param name="obj">The object to add to the transaction.</param>
     public void AddNewlyCreatedDBObject(DBObject obj)

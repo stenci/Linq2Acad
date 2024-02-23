@@ -157,7 +157,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Creates a colletion of new elements.
+    /// Creates a collection of new elements.
     /// </summary>
     /// <param name="names">The unique names of the new elements.</param>
     public IEnumerable<T> Create(IEnumerable<string> names)
@@ -235,7 +235,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Creates a colletion of new elements.
+    /// Creates a collection of new elements.
     /// </summary>
     /// <param name="names">The unique names of the new elements.</param>
     public IEnumerable<T> Create(IEnumerable<string> names)

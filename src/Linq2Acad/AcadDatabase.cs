@@ -55,7 +55,7 @@ namespace Linq2Acad
     public Database Database { get; }
 
     /// <summary>
-    /// Provies access to the summary info.
+    /// Provides access to the summary info.
     /// </summary>
     public AcadSummaryInfo SummaryInfo
     {

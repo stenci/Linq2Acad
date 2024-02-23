@@ -12,7 +12,7 @@ namespace Linq2Acad
   /// </summary>
   public static class GroupExtensions
   {   /// <summary>
-    /// Appends ids to group. (Note, this crystalises the ids to an array internally).
+    /// Appends ids to group. (Note, this crystallises the ids to an array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="ids"></param>
@@ -33,7 +33,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Appends entities to group. (Note, this crystalises the entities to an object id array internally).
+    /// Appends entities to group. (Note, this crystallises the entities to an object id array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="entities"></param>
@@ -46,7 +46,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Prepends ids to group. (Note, this crystalises the ids to an array internally).
+    /// Prepends ids to group. (Note, this crystallises the ids to an array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="ids"></param>
@@ -67,7 +67,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Prepends entities to group. (Note, this crystalises the entities to an object id array internally).
+    /// Prepends entities to group. (Note, this crystallises the entities to an object id array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="entities"></param>
@@ -80,7 +80,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Appends ids to group at the index required. (Note, this crystalises the ids to an array internally).
+    /// Appends ids to group at the index required. (Note, this crystallises the ids to an array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="index"></param>
@@ -103,7 +103,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Appends entities to group at the index required. (Note, this crystalises the entities to an ids array internally).
+    /// Appends entities to group at the index required. (Note, this crystallises the entities to an ids array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="index"></param>
@@ -118,7 +118,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Removes ids from group at the index required. (Note, this crystalises the ids to an array internally).
+    /// Removes ids from group at the index required. (Note, this crystallises the ids to an array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="ids"></param>
@@ -139,7 +139,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Removes entities from group at the index required. (Note, this crystalises the entity to an ids array, internally).
+    /// Removes entities from group at the index required. (Note, this crystallises the entity to an ids array, internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="entities"></param>
@@ -152,7 +152,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Removes ids from the group (i.e. the objects whose object IDs are in the ids enumerable). All objects must be in the group and be at index locations equal to or higher than index. (Note, this crystalises the ids to an array internally).
+    /// Removes ids from the group (i.e. the objects whose object IDs are in the ids enumerable). All objects must be in the group and be at index locations equal to or higher than index. (Note, this crystallises the ids to an array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="index"></param>
@@ -175,7 +175,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Removes entities from the group. All objects must be in the group and be at index locations equal to or higher than index. (Note, this crystalises the entities into an ids array internally).
+    /// Removes entities from the group. All objects must be in the group and be at index locations equal to or higher than index. (Note, this crystallises the entities into an ids array internally).
     /// </summary>
     /// <param name="group"></param>
     /// <param name="index"></param>

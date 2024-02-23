@@ -28,7 +28,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Gets the value of the DynamicBlockReferencePropertywith the given name.
+    /// Gets the value of the DynamicBlockReferenceProperty with the given name.
     /// </summary>
     /// <param name="properties">The DynamicBlockReferencePropertyCollection.</param>
     /// <param name="name">The name to look for.</param>
@@ -46,7 +46,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// Sets the value of the DynamicBlockReferencePropertywith the given name.
+    /// Sets the value of the DynamicBlockReferenceProperty with the given name.
     /// </summary>
     /// <param name="properties">The DynamicBlockReferencePropertyCollection.</param>
     /// <param name="name">The name to look for.</param>

@@ -17,9 +17,9 @@ namespace Linq2Acad
   {
     /// <summary>
     /// Uses the top transaction in the transaction manager and performs the given action using the transaction.
-    /// If now transaction is avialable, a new transaction is started.
+    /// If now transaction is available, a new transaction is started.
     /// </summary>
-    /// <param name="source">The source object that acts as the transcation manager provider.</param>
+    /// <param name="source">The source object that acts as the transaction manager provider.</param>
     /// <param name="action">The action to execute.</param>
     public static void WrapInTransaction(DBObject source, Action<Transaction> action)
     {
@@ -56,7 +56,7 @@ namespace Linq2Acad
     /// </summary>
     /// <typeparam name="T">The actual type of the item.</typeparam>
     /// <param name="element">The element to perform the action on.</param>
-    /// <param name="action">The action to perfrom.</param>
+    /// <param name="action">The action to perform.</param>
     /// <param name="keepUpgraded">True, if the item should stay write enabled after the action has been performed.</param>
     public static void WriteWrap<T>(T element, Action action, bool keepUpgraded = false) where T : DBObject
       => WriteWrap<T, object>(element, () => { action(); return null; }, keepUpgraded);
@@ -92,7 +92,7 @@ namespace Linq2Acad
     }
 
     /// <summary>
-    /// If an object is serialized into binaray, his the size for each binary chunk.
+    /// If an object is serialized into binary, its the size for each binary chunk.
     /// </summary>
     private const int ChunkSize = 127;
 
