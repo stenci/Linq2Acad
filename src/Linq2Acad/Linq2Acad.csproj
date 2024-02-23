@@ -256,6 +256,7 @@
     <Compile Include="Containers\PaperSpaceEntityContainerEnumerable.cs" />
     <Compile Include="CreateOptions.cs" />
     <Compile Include="Containers\DbObjectContainer.cs" />
+    <Compile Include="NotDisposableAcadDatabase.cs" />
     <Compile Include="OpenForEditOptions.cs" />
     <Compile Include="OpenReadOnlyOptions.cs" />
     <Compile Include="Helpers\Require.cs" />

@@ -423,6 +423,10 @@ namespace Linq2Acad
     /// <param name="commitTransaction">True, if the transaction in use should be committed when this instance is disposed of.</param>
     /// <param name="disposeTransaction">True, if the transaction in use should be disposed of when this instance is disposed of.</param>
     /// <returns>The AcadDatabase instance.</returns>
+    /// <remarks>
+    /// The transaction has already been created and is assumed to be committed and disposed by the caller.<br/>
+    /// The instance returned is not supposed to be disposed. Please consider using <c>NotDisposableAcadDatabase</c> instead.
+    /// </remarks>
     [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Advanced)]
     public static AcadDatabase Active(Transaction transaction, bool commitTransaction, bool disposeTransaction)
     {
