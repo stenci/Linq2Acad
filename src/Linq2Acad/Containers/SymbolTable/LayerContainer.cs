@@ -30,12 +30,12 @@ namespace Linq2Acad
       Require.TransactionNotDisposed(transaction.IsDisposed);
       Require.IsValidSymbolName(name, nameof(name));
       Require.NameDoesNotExist<LayerTableRecord>(Contains(name), name);
-      Require.ElementsNotNull(entities, nameof(entities));
 
       var layer = CreateInternal(name);
 
       foreach (var entity in entities.UpgradeOpen())
       {
+        Require.ElementNotNull(entity, nameof(entities));
         entity.LayerId = layer.ObjectId;
       }
 

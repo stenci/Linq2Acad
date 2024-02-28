@@ -70,7 +70,6 @@ namespace Linq2Acad
       Require.TransactionNotDisposed(transaction.IsDisposed);
       Require.IsValidSymbolName(name, nameof(name));
       Require.NameDoesNotExist<BlockTableRecord>(Contains(name), name);
-      Require.ElementsNotNull(entities, nameof(entities));
 
       // TODO: What about this check?
       //var alreadyInBlock = entities.FirstOrDefault(e => !e.ObjectId.IsNull);
@@ -80,6 +79,7 @@ namespace Linq2Acad
 
       foreach (var entity in entities.UpgradeOpen())
       {
+        Require.ElementNotNull(entity, nameof(entities));
         block.AppendEntity(entity);
       }
 

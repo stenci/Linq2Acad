@@ -29,10 +29,9 @@ namespace Linq2Acad
       return element;
     }
 
-    protected IEnumerable<T> CreateInternal(IEnumerable<string> names)
+    protected IEnumerable<T> CreateInternal(string[] names)
     {
-      var tmpNames = names.ToArray();
-      var elements = new T[tmpNames.Length];
+      var elements = new T[names.Length];
 
       for (int i = 0; i < elements.Length; i++)
       {
@@ -43,7 +42,7 @@ namespace Linq2Acad
 
       for (int i = 0; i < elements.Length; i++)
       {
-        elements[i].Name = tmpNames[i];
+        elements[i].Name = names[i];
       }
 
       return elements;
@@ -165,11 +164,12 @@ namespace Linq2Acad
       Require.NotDisposed(database.IsDisposed, nameof(AcadDatabase));
       Require.TransactionNotDisposed(transaction.IsDisposed);
       Require.ParameterNotNull(names, nameof(names));
-      Require.ElementsNotNull(names, nameof(names));
-      var existingName = names.FirstOrDefault(Contains);
+      var tmpNames = names.ToArray();
+      Require.ElementsNotNull(tmpNames, nameof(names));
+      var existingName = tmpNames.FirstOrDefault(Contains);
       Require.NameDoesNotExist<T>(Contains(existingName), existingName);
 
-      return CreateInternal(names);
+      return CreateInternal(tmpNames);
     }
 
     /// <summary>
@@ -242,9 +242,10 @@ namespace Linq2Acad
     {
       Require.NotDisposed(database.IsDisposed, nameof(AcadDatabase));
       Require.TransactionNotDisposed(transaction.IsDisposed);
-      Require.ElementsNotNull(names, nameof(names));
+      var tmpNames = names.ToArray();
+      Require.ElementsNotNull(tmpNames, nameof(names));
 
-      return CreateInternal(names);
+      return CreateInternal(tmpNames);
     }
 
     /// <summary>

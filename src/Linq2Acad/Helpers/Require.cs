@@ -61,8 +61,15 @@ namespace Linq2Acad
     public static void ElementsNotNull<T>(IEnumerable<T> enumerable, string parameterName) where T : class
     {
       ParameterNotNull(enumerable, parameterName);
+      foreach (var element in enumerable)
+      {
+        ElementNotNull(element, parameterName);
+      }
+    }
 
-      if (enumerable.Any(e => e == null))
+    public static void ElementNotNull<T>(T element, string parameterName) where T : class
+    {
+      if (element == null)
       {
         throw new Exception($"{parameterName} must not contain null values");
       }

@@ -36,7 +36,7 @@ namespace Linq2Acad
       Require.ParameterNotNull(entity, nameof(entity));
       Require.NewlyCreated(entity, nameof(entity));
 
-      return AddInternal(new[] { entity }, setDatabaseDefaults).First();
+      return AddInternal(entity, setDatabaseDefaults);
     }
 
     /// <summary>
@@ -50,40 +50,37 @@ namespace Linq2Acad
       Require.NotDisposed(database.IsDisposed, nameof(AcadDatabase));
       Require.TransactionNotDisposed(transaction.IsDisposed);
       Require.ParameterNotNull(entities, nameof(entities));
-      Require.ElementsNotNull(entities, nameof(entities));
 
+      var ids = new List<ObjectId>();
       foreach (var entity in entities)
       {
+        Require.ElementNotNull(entity, nameof(entities));
         Require.NewlyCreated(entity, nameof(entity));
+        ids.Add(AddInternal(entity, setDatabaseDefaults));
       }
 
-      return AddInternal(entities, setDatabaseDefaults);
+      return ids;
     }
 
     /// <summary>
     /// Adds Entities to the container.
     /// </summary>
-    /// <param name="items">The Entities to be added.</param>
+    /// <param name="item">The Entity to be added.</param>
     /// <param name="setDatabaseDefaults">True, if the database defaults should be set.</param>
-    /// <returns>The ObjectIds of the Entities that were added.</returns>
-    private IReadOnlyCollection<ObjectId> AddInternal(IEnumerable<Entity> items, bool setDatabaseDefaults)
+    /// <returns>The ObjectId of the Entity that was added.</returns>
+    private ObjectId AddInternal(Entity item, bool setDatabaseDefaults)
     {
       var btr = (BlockTableRecord)transaction.GetObject(ID, OpenMode.ForWrite);
-      var ids = new List<ObjectId>();
 
-      foreach (var item in items)
+      if (setDatabaseDefaults)
       {
-        if (setDatabaseDefaults)
-        {
-          item.SetDatabaseDefaults();
-        }
-
-        var id = btr.AppendEntity(item);
-        transaction.AddNewlyCreatedDBObject(item, true);
-        ids.Add(id);
+        item.SetDatabaseDefaults();
       }
 
-      return ids;
+      var id = btr.AppendEntity(item);
+      transaction.AddNewlyCreatedDBObject(item, true);
+
+      return id;
     }
 
     /// <summary>
